@@ -75,15 +75,21 @@ public class ModEventHandler {
         Pokemon father = BreedLogic.findFather(event.parent1, event.parent2);
         Pokemon egg = event.getEgg();
 
-        if (isASHGreninja(mother)
-                || (mother.getSpecies() == EnumSpecies.Ditto && isASHGreninja(father))) {
-            if (new Random().nextFloat() <= 0.6f) {
-                egg.setForm(EnumGreninja.BATTLE_BOND.getForm());
+        if (isGreninja(egg)) {
+            if (isASHGreninja(mother)
+                    || (mother.getSpecies() == EnumSpecies.Ditto && isASHGreninja(father))) {
+                if (new Random().nextFloat() <= BetterPokemonBreedMod.MOD_CONFIG.getBreedASHChance()) {
+                    egg.setForm(EnumGreninja.BATTLE_BOND.getForm());
+                }
             }
         }
     }
 
     private boolean isASHGreninja(Pokemon pokemon) {
-        return pokemon.getSpecies() == EnumSpecies.Greninja && pokemon.getForm() == EnumGreninja.BATTLE_BOND.getForm();
+        return isGreninja(pokemon) && pokemon.getForm() == EnumGreninja.BATTLE_BOND.getForm();
+    }
+
+    private boolean isGreninja(Pokemon pokemon) {
+        return pokemon.getSpecies() == EnumSpecies.Greninja || pokemon.getSpecies() == EnumSpecies.Froakie || pokemon.getSpecies() == EnumSpecies.Frogadier;
     }
 }
