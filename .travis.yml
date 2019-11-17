@@ -1,0 +1,7 @@
+language: java
+sudo: required
+before_install:
+- sudo chmod +x ./gradlew
+- "./gradlew setupDecompWorkspace"
+script:
+- "./gradlew build"
