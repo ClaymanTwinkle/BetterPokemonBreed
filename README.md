@@ -1,4 +1,4 @@
-## Better Pokemon Breed（更好的宝可梦培育） ![下载](https://github.com/ClaymanTwinkle/BetterPokemonBreed/releases)
+## Better Pokemon Breed（更好的宝可梦培育） ![下载地址](https://github.com/ClaymanTwinkle/BetterPokemonBreed/releases)
 
 喜欢的小伙伴右上角点下★Star 支持下，谢谢~
 
